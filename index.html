@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hatim Materwala – Newnham Campus Coordinator</title>
+  <style>
+    /* Basic Reset and Fonts */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+    }
+
+    /* Navigation */
+    header {
+      background: #004080;
+      color: #fff;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 10px;
+      padding: 10px;
+    }
+    .nav-links li a:hover {
+      color: #ffdd57;
+    }
+    /* Mobile menu toggle */
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+    @media(max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #004080;
+        flex-direction: column;
+        width: 200px;
+        display: none;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* Hero Section */
+    .hero {
+      background: #f0f8ff;
+      padding: 100px 20px 60px;
+      text-align: center;
+      margin-top: 60px;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    .hero img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 4px solid #004080;
+    }
+    .btn {
+      background: #004080;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #003366;
+    }
+
+    /* Sections */
+    section {
+      padding: 60px 20px;
+    }
+    section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2rem;
+      color: #004080;
+    }
+    .content {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+    }
+    .content img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+    .bullet-list {
+      margin-top: 20px;
+      text-align: left;
+    }
+    .bullet-list li {
+      margin: 10px 0;
+      padding-left: 20px;
+      position: relative;
+    }
+    .bullet-list li::before {
+      content: "✅";
+      position: absolute;
+      left: 0;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background: rgba(0,0,0,0.7);
+    }
+    .modal-content {
+      background: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 500px;
+      position: relative;
+      text-align: center;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .modal-content h3 {
+      margin-bottom: 15px;
+    }
+    .modal-content p {
+      margin-bottom: 20px;
+    }
+    
+    /* Footer */
+    footer {
+      background: #004080;
+      color: #fff;
+      text-align: center;
+      padding: 15px 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <h2>Hatim Materwala</h2>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#focus">Focus Areas</a></li>
+          <li><a href="#vision">Vision</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <h1>Hello Seneca Students! 👋</h1>
+    <p>I’m Hatim Materwala – your candidate for Newnham Campus Coordinator (2025/2026 term).</p>
+    <p>Committed to making your college experience engaging, innovative, and financially empowering.</p>
+    <!-- <button class="btn" id="voteBtn">Vote Now</button> -->
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about">
+    <div class="container content">
+      <h2>A Little About Me</h2>
+      <p>
+        Proud to have earned a 4.0 GPA and been placed on the Seneca President’s Honour List.
+        I fund my tuition through a part-time job and understand the balance between work, academics, and life’s challenges.
+      </p>
+      <img src="gallery/about.jpg" alt="Hatim Profile">
+    </div>
+  </section>
+
+  <!-- Focus Areas Section -->
+  <section id="focus">
+    <div class="container content">
+      <h2>If Elected, I Will Focus On:</h2>
+      <ul class="bullet-list">
+        <li>Empowering Students with AI (workshops, hackathons, and networking events)</li>
+        <li>Financial Wellness (budgeting and smart saving sessions)</li>
+        <li>Career Opportunities (career fairs and AI-powered job search strategies)</li>
+        <li>Student Advocacy (ensuring your ideas and concerns are heard)</li>
+        <li>Enhancing Campus Life (vibrant, student-friendly campus initiatives)</li>
+      </ul>
+      <img src="gallery/focus.jpg" alt="Focus Areas">
+    </div>
+  </section>
+
+  <!-- Vision Section -->
+  <section id="vision">
+    <div class="container content">
+      <h2>My Vision for Seneca</h2>
+      <p>
+        Imagine a Seneca where academic success and financial stability go hand-in-hand. A campus where AI and technology are
+        at the heart of your education and career preparation. Together, we can create a future-ready, financially empowered student community.
+      </p>
+      <img src="gallery/vision.jpg" alt="Vision for Seneca">
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container content">
+      <h2>Contact & Get Involved</h2>
+      <p>Your voice matters! Drop your suggestions or ask any questions.</p>
+      <!-- Using mailto as form action -->
+      <form action="mailto:hatimmater1234@gmail.com" method="post" enctype="text/plain">
+        <div style="margin-bottom: 10px;">
+          <input type="text" name="name" placeholder="Your Name" required style="padding: 10px; width: 100%;" />
+        </div>
+        <div style="margin-bottom: 10px;">
+          <input type="email" name="email" placeholder="Your Email" required style="padding: 10px; width: 100%;" />
+        </div>
+        <div style="margin-bottom: 10px;">
+          <textarea name="message" placeholder="Your Message" required style="padding: 10px; width: 100%; height: 100px;"></textarea>
+        </div>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Modal for Vote Now -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <h3>Thank You for Your Support!</h3>
+      <p>Your vote and voice are important. Let's work together to create a better Seneca experience!</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Newnham Campus | Hatim Materwala – Campus Coordinator Candidate 2025/2026</p>
+  </footer>
+
+  <!-- JavaScript for Interactivity -->
+  <script>
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href'))
+          .scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Modal functionality
+    const voteBtn = document.getElementById('voteBtn');
+    const modal = document.getElementById('modal');
+    const closeModal = document.getElementById('closeModal');
+
+    voteBtn.addEventListener('click', () => {
+      modal.style.display = 'block';
+    });
+
+    closeModal.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target == modal) {
+        modal.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
